@@ -1,0 +1,66 @@
+<style>
+    .register,
+    .image {
+        min-height: 70vh;
+    }
+
+    .bg-image {
+        background-image: url('https://i.insider.com/5dfaa585855cc2024879828f?width=700');
+        background-size: cover;
+        background-position: center center;
+    }
+    .form_item{
+        margin-bottom:20px;
+    }
+    .register{
+        padding:20px 30px;
+       
+    }
+    .btn-register{
+        margin:10px;
+        position: absolute;
+        right: 82px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="col-md-6 d-none d-md-flex bg-image"></div>
+        <div class="col-md-6 bg-light">
+            <div class="register d-flex ">
+
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row">
+
+                        <h4 style=" text-align:center"  class="display-6">Facebook finder</h4>
+                        <br>
+                        <form method="POST" action="/auth/register">
+                            <div class="form_item">
+                                <label for="validationDefault01">User Name</label>
+                                <input type="text" class="form-control" name='username' id="txt_username"
+                                    placeholder="User Name" required>
+                            </div>
+                              <div class="form_item">
+                                <label for="validationDefault01">Password</label>
+                                <input type="Password" class="form-control" name='password' id="txt_password"
+                                    placeholder="Password" required>
+                            </div>
+                              <div class="form_item">
+                                <label for="validationDefault01">Full Name</label>
+                                <input type="text" class="form-control" name="fullname" id="txt_name"
+                                    placeholder="Full Name" required>
+                            </div>
+                              <div class="form_item">
+                                <label for="validationDefault01">Email</label>
+                                <input type="email" class="form-control" Name="email" id="txt_email"
+                                    placeholder="Email" required>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-register">Register</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

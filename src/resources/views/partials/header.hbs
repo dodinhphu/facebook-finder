@@ -1,0 +1,57 @@
+<div class="header">
+    <div class="home-header">
+        <a>
+            <img class="logo" src="/images/fb.png" />
+        </a>
+        <ul class="menu">
+            <a href="/home">
+                <li>Home</li>
+            </a>
+            <a href="/show">
+                <li>List Profile</li>
+            </a>
+            <li>Blog</li>
+            <li>Help Center</li>
+
+        </ul>
+        {{#if kt}}
+        <div class="admin_true btn-group">
+            <button style="font-size:inherit" type="button" class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                WelCome, {{userdangnhap}}
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <button onclick="logout()" style="font-size: 20px;" class="dropdown-item">
+                        Log Out <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </li>
+                <li>
+                    <button style="font-size: 20px;" class="dropdown-item">
+                        My Account
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        {{else}}
+        <div class='admin'>
+            <div class="_login">
+                <a href='/auth/login'>
+                    Login
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            </div>
+            <div class="_dk">
+                <a href='/auth/register'>
+                    Register
+                    <i class="fas fa-user-plus"></i>
+                </a>
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+</div>
+
+<script src="/ajax/logout_ajax.js"></script>

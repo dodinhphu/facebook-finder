@@ -1,0 +1,43 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+<script defer src="/js/face-api.min.js"></script>
+<script defer src="/js/script.js"></script>
+<input type="file" id="imageUpload">
+<br>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Search
+</button>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Danh Sách Khuôn Mặt</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="select-faces">
+                <ul id="ulist">
+                </ul>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

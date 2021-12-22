@@ -82,7 +82,8 @@ class adminController {
         let pt_crawling_day = (profile_crawling_day * 100) / tong_profile_true;
         let pt_not_handled_day = (profile_not_crawling_day * 100) / tong_profile_false;
         let pt_userday = (user_day * 100) / (total_user - user_day);
-        console.log("ngày",new Date().toDateString())
+        let d= new Date();
+        console.log("ngày",d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+","+"   "+(d.getHours+1)+"/"+(d.getMinutes+1))
         res.render('admin-view/admin_home', {
             total_profile_tranning_day: profile_tranning_day,
             total_profile_crawling_day: profile_crawling_day,

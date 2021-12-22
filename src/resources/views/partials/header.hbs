@@ -1,4 +1,4 @@
-<div class="header">
+{{!-- <div class="header">
     <div class="home-header">
         <a>
             <img class="logo" src="/images/fb.png" />
@@ -15,119 +15,165 @@
                 <li>Help Center</li>
             </a>
 
-        </ul>
+        </ul> --}}
 
-        {{#if kt}}
-        <div class="admin_true btn-group">
-            <button type="button" class="btn_drdl btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="icon_user__ far fa-user"></i>
-            </button>
-            <div class="ctb_" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <div style="position:relative">
-                    <i class="far fa-bell"></i>
-                    <span style=" left: 29px;top: 4px;width: 24px;height: 24px;text-align: center;"
-                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        <span
-                            style="position: absolute;top: 4px;left: 8px;font-size: 14px;">{{notification_chuadoc.length}}</span>
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </div>
 
-            </div>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div style="margin-bottom: 6px;" class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="navbar___">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img class="logo" src="/images/fb.png" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="ul_nav__ navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="li_nav__ nav-item">
+                                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                            </li>
+                            <li class="li_nav__ nav-item">
+                                <a class="nav-link active" aria-current="page" href="/history">History</a>
+                            </li>
+                            <li class="li_nav__ nav-item">
+                                <a class="nav-link active" href="/blog">Blog</a>
+                            </li>
+                            <li class="li_nav__ nav-item">
+                                <a class="nav-link active" href="/contact">Help Center</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex">
+
+                        </form>
+                    </div>
+                    {{#if kt}}
+                    <div class="admin_true btn-group">
+                        <button type="button" class="btn_drdl btn  dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="icon_user__ far fa-user"></i>
+                        </button>
+                        <div class="ctb_" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div style="position:relative">
+                                <i class="far fa-bell"></i>
+                                <span style=" left: 29px;top: 4px;width: 24px;height: 24px;text-align: center;"
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    <span
+                                        style="position: absolute;top: 4px;left: 8px;font-size: 14px;">{{notification_chuadoc.length}}</span>
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </div>
+
                         </div>
-                        <div style="font-size: 18px;padding:0" class="modal-body">
-                            {{#if (kt_bang0 totalNotifications )}}
-                            <div class="tb_khong_tb">No Notification </div>
-                            <hr>
-                            {{else}}
-                            {{#each notification_chuadoc}}
-                            <a style="text-decoration: none;color:#0067ff"
-                                href="./notification?id={{this.id}}">
-                                <div class='tb_hd'>
-                                    <h6 class='titletb'>{{this.tieude}}</h6>
-                                    <div style="max-width: 450px;" class="d-inline-block text-truncate typetb">
-                                        {{{phan_loai this.loai}}} <span>{{this.noidung}}</span></div>
-                                    <div class="thoigiantb"><span>{{this.thoigian}}</span></div>
-                                </div>
-                            </a>
-                            <hr>
-                            {{/each}}
-                            {{#each notification_dadoc}}
-                            <a style="text-decoration: none;color:#262b2f"
-                                href="./notification?id={{this.id}}">
-                                <div class='tb_hd'>
-                                    <h6 class='titletb'>{{this.tieude}}</h6>
-                                    <div style="max-width: 450px;" class="d-inline-block text-truncate typetb">
-                                        {{{phan_loai this.loai}}} <span>{{this.noidung}}</span></div>
-                                    <div class="thoigiantb"><span>{{this.thoigian}}</span></div>
-                                </div>
-                            </a>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div style="margin-bottom: 6px;" class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div style="font-size: 18px;padding:0" class="modal-body">
+                                        {{#if (kt_bang0 totalNotifications )}}
+                                        <div class="tb_khong_tb">No Notification </div>
+                                        <hr>
+                                        {{else}}
+                                        {{#each notification_chuadoc}}
+                                        <a style="text-decoration: none;color:#0067ff"
+                                            href="./notification?id={{this.id}}">
+                                            <div class='tb_hd'>
+                                                <h6 class='titletb'>{{this.tieude}}</h6>
+                                                <div style="max-width: 450px;"
+                                                    class="d-inline-block text-truncate typetb">
+                                                    {{{phan_loai this.loai}}} <span>{{this.noidung}}</span></div>
+                                                <div class="thoigiantb"><span>{{this.thoigian}}</span></div>
+                                            </div>
+                                        </a>
+                                        <hr>
+                                        {{/each}}
+                                        {{#each notification_dadoc}}
+                                        <a style="text-decoration: none;color:#262b2f"
+                                            href="./notification?id={{this.id}}">
+                                            <div class='tb_hd'>
+                                                <h6 class='titletb'>{{this.tieude}}</h6>
+                                                <div style="max-width: 450px;"
+                                                    class="d-inline-block text-truncate typetb">
+                                                    {{{phan_loai this.loai}}} <span>{{this.noidung}}</span></div>
+                                                <div class="thoigiantb"><span>{{this.thoigian}}</span></div>
+                                            </div>
+                                        </a>
 
-                            <hr>
-                            {{/each}}
+                                        <hr>
+                                        {{/each}}
+                                        {{/if}}
+                                    </div>
+                                    <div style="border:none" class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul  style="z-index: 500000;" class="tb_dndx dropdown-menu">
+                            <div class="ten_user_aa">
+                                <span>WelCome,</span>
+                                <span>{{userdangnhap}}</span>
+                            </div>
+                            <li>
+                                <button onclick="logout()" style="font-size: 20px;" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Log Out
+                                </button>
+                            </li>
+                            <li>
+                                <a href='../auth/changepassword'>
+
+                                    <button style="font-size: 20px;" class="dropdown-item">
+                                        <i class="fas fa-user-circle"></i>
+                                        My Account
+                                    </button>
+                                </a>
+                            </li>
+                            {{#if (kt_so quyen 0) }}
+                            <li>
+                                <a href="../admin">
+                                    <button style="font-size: 20px;" class="dropdown-item">
+                                        <i class="fas fa-user-shield"></i>
+                                        Web Manager
+                                    </button>
+                                </a>
+                            </li>
                             {{/if}}
+                        </ul>
+                    </div>
+                    {{else}}
+                    <div class='admin'>
+                        <div class="_login">
+                            <a href='/auth/login'>
+                                Login
+                                <i class="fas fa-sign-in-alt"></i>
+                            </a>
                         </div>
-                        <div style="border:none" class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <div class="_dk">
+                            <a href='/auth/register'>
+                                Register
+                                <i class="fas fa-user-plus"></i>
+                            </a>
                         </div>
                     </div>
+                    {{/if}}
                 </div>
-            </div>
-            <ul style="z-index: 500000;" class="dropdown-menu">
-                <div class="ten_user_aa">
-                    <span>WelCome,</span>
-                    <span>{{userdangnhap}}</span>
-                </div>
-                <li>
-                    <button onclick="logout()" style="font-size: 20px;" class="dropdown-item">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Log Out
-                    </button>
-                </li>
-                <li>
-                    <a href='../auth/changepassword'>
+            </nav>
+        </div>
 
-                        <button style="font-size: 20px;" class="dropdown-item">
-                            <i class="fas fa-user-circle"></i>
-                            My Account
-                        </button>
-                    </a>
-                </li>
-                {{#if (kt_so quyen 0) }}
-                <li>
-                    <a href="../admin">
-                        <button style="font-size: 20px;" class="dropdown-item">
-                            <i class="fas fa-user-shield"></i>
-                            Web Manager
-                        </button>
-                    </a>
-                </li>
-                {{/if}}
-            </ul>
-        </div>
-        {{else}}
-        <div class='admin'>
-            <div class="_login">
-                <a href='/auth/login'>
-                    Login
-                    <i class="fas fa-sign-in-alt"></i>
-                </a>
-            </div>
-            <div class="_dk">
-                <a href='/auth/register'>
-                    Register
-                    <i class="fas fa-user-plus"></i>
-                </a>
-            </div>
-        </div>
-        {{/if}}
+
+
+
+
 
     </div>
 </div>

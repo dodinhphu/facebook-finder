@@ -99,3 +99,8 @@
     margin-top: -10px;
     margin-bottom: 22px;
 }
+@media (max-width: 576px) {
+    .chi_tiet__{
+        padding-top: 40px;
+    }
+}

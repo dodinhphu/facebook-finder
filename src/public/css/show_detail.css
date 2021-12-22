@@ -177,21 +177,23 @@ a {
 }
 
 .post_post:hover {
-    animation:nextarrow 3s ease;
+    animation: nextarrow 3s ease;
 }
 
 @keyframes nextarrow {
     10% {
-        transform:rotate(1deg);
+        transform: rotate(1deg);
     }
 
     100% {
-        transform:rotate(-3deg);
+        transform: rotate(-3deg);
     }
 }
-.bgrim__{
+
+.bgrim__ {
     transition: all 0.3s ease;
 }
+
 .bgrim__:hover {
     transform: scale(1.01);
     z-index: 88888;
@@ -465,5 +467,39 @@ h2 {
     .demo-btn {
         min-width: 0;
         font-size: 14px;
+    }
+
+    #profile-banner-image {
+        height: 270px;
+    }
+
+    #profile-pic {
+        box-shadow: 0 0 0 1px #fff;
+        margin-left: 52px;
+        border-radius: 50%;
+        margin-top: 40px;
+    }
+
+    #u-name {
+        position: initial;
+        color: rgb(32, 32, 32);
+        margin-left:-13px;
+    }
+    #main-content{
+        padding:100px 0 0 0;
+        
+    }
+    #l-col{
+        padding:0;
+    }
+    .__ben_phai{
+        padding: 0;
+        margin: 40px 0 10px 0;
+    }
+    .txt_details h6{
+        display:none;
+    }
+    .app_details {
+        margin: 0;
     }
 }

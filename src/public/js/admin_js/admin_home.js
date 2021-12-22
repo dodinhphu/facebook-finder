@@ -3,6 +3,7 @@ $.ajax({
     url: './admin/api/home',
     type: "POST",
 }).then(function (data) {
+    console.log(data);
     /* tính phần trăm */
     let pt_crawling_true = (data.tong_profile_true * 100) / data.tong_profile;
     let pt_crawling_false = ((data.tong_profile - data.tong_profile_true) * 100) / data.tong_profile;

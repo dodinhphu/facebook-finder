@@ -7,10 +7,12 @@ const adminRouter = require('./adminRouter');
 const contactRouter = require('./contactRouter');
 const historyRouter = require('./historyRouter');
 const notificationRouter = require('./notificationRouter');
+const blogRouter =require('./blogRouter')
 
 const lay_tt_user = require('../middleware/get_data');
 function route(app) {
     app.use(lay_tt_user);
+    app.use('/blog', blogRouter);
     app.use('/admin', adminRouter)
     app.use('/api/face', apiface);
     app.use('/auth', authRoute);

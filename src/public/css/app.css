@@ -35,14 +35,12 @@ a {
 }
 
 #ulist li {
-  /* width: 110px;
-    height: 112px; */
   padding: 8px;
 }
 
 #ulist li img {
-  width: 150px;
-  height: 150px;
+  width: 129px;
+  height: 129px;
 }
 
 #ulist li button {
@@ -51,9 +49,6 @@ a {
 
 .modal-content {
   padding: 18px 15px;
-  /* overflow: hidden;
-    overflow-y: scroll;
-    height: 371px; */
   box-shadow: 3px 3px 0 #000;
   border: 1px solid #000;
   border-radius: 6px;

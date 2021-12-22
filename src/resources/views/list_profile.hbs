@@ -2,7 +2,9 @@
 <link rel="stylesheet" href="/css/list_profile.css">
 {{/section}}
 {{#section 'title'}}List Profile{{/section}}
+{{#section 'javascript'}}
 
+{{/section}}
 
 
 
@@ -12,7 +14,30 @@
     <h5 class="history___">List <span>Profiles</span></h5>
     <div id="tong__tong" class="row">
         {{#if (kt_bang0 data.length) }}
-        <div> Profile not found</div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-12">
+                    <div class="card w-50 shadow mx-auto">
+                        <div class="card-body text-center">
+                            <h1 class="card-title">Oops!</h1>
+                            <h2>Profile Not Found</h2>
+                            <div>Sorry, an error has occured. Requested Profile not found!!</div>
+                            <div class="my-4">
+                                <a href="/" class="btn btn-primary btn-lg">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    Take Me Home
+                                </a>
+                                <a style="margin-bottom: 9px;" href="https://facebook-finder.herokuapp.com/contact"
+                                    class="btn btn-success btn-lg">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    Contact Support
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         {{else}}
         {{#each data}}
         <div class="col-lg-6">
@@ -25,19 +50,19 @@
                         <div class="conten__ card-body">
                             <h5 class="ten__ card-title">{{this.name}}</h5>
                             <div class="item__ ngaysinh__">
-                                <span class="indam">Ngày Sinh: </span>
+                                <span class="indam">Day Of Birth: </span>
                                 <span>{{this.ngaysinh}}</span>
                             </div>
                             <div class="item__ gioitinh__">
-                                <span class="indam">Giới Tính: </span>
+                                <span class="indam">Sex: </span>
                                 <span>{{this.gioitinh}}</span>
                             </div>
                             <div class="item__ diachi__">
-                                <span class="indam">Địa Chỉ: </span>
+                                <span class="indam">Address: </span>
                                 <span>{{this.address}}</span>
                             </div>
                             <div class="item__ like__">
-                                <div class="txt_text"><span class="indam">Thích:</span>
+                                <div class="txt_text"><span class="indam">Like:</span>
                                     {{#each this.page}}{{this}}, {{/each}}
                                 </div>
                             </div>

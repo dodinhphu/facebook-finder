@@ -1,0 +1,31 @@
+.blog {
+   
+    padding-top: 3rem;
+    width: 1018px;
+    display: block;
+    margin: 0 auto;
+}
+.blog1 {
+    width: 1100px;
+    display: flex;
+    margin-bottom: 30px;
+}
+.post {
+    width: 33%;
+    /* margin: auto; */
+}
+.post h2 {
+    margin: 20px 0 12px;
+    font-size: 24px;
+}
+.post p {
+    font: 400 20px/28px Book;
+    margin: 0;
+    height: 112px;
+    overflow: hidden;
+    width: 82%;
+}
+.post img {
+    width: 330px;
+    height: 175px;
+}

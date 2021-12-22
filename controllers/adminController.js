@@ -56,6 +56,7 @@ class adminController {
 
     async get_home(req, res, next) {
         let ngaychuyendoi = new Date().toLocaleString("en-US", { timeZone: "Asia/Ho_Chi_Minh" });
+        console.log(ngaychuyendoi)
         let tong_profile_true = await profile.countDocuments({
             check: true,
         });
@@ -83,7 +84,7 @@ class adminController {
         let pt_crawling_day = (profile_crawling_day * 100) / tong_profile_true;
         let pt_not_handled_day = (profile_not_crawling_day * 100) / tong_profile_false;
         let pt_userday = (user_day * 100) / (total_user - user_day);
-        console.log(d)
+        
         res.render('admin-view/admin_home', {
             total_profile_tranning_day: profile_tranning_day,
             total_profile_crawling_day: profile_crawling_day,

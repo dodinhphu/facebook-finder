@@ -1,0 +1,47 @@
+.float-right {
+    font-weight: 900;
+    float: right;
+}
+
+.mr-1, .mx-1 {
+    margin-right: .25rem !important;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.header-title {
+    text-align: center;
+}
+
+.khoi_mau {
+    width: 24px;
+    height: 12px;
+    margin-right: 18px !important;
+}
+.khoi_gt div{
+    font-weight: 500;
+    font-style: italic;
+}
+
+.colo_crawling {
+    background-color: #f3bb45;
+}
+
+.colo_not_crawling {
+    background-color: #eb5e28;
+}
+
+.colo_tranning {
+    background-color: #20c997;
+}

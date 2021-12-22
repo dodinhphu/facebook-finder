@@ -1,0 +1,154 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/admin_css/feedback.css">
+{{/section}}
+
+{{#section 'title'}}Admin - Feedback{{/section}}
+
+{{#section 'javascript'}}
+<script src="/js/admin_js/pagination.min.js"></script>
+<script src="/js/admin_js/feedback.js"></script>
+{{/section}}
+
+
+<div>
+    <div id="wrapper" style='display: flex;'>
+        {{>admin_nav}}
+        <div class="content-page" style="width:83%">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                                        <li class="breadcrumb-item active">Feedback</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">Feedback</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table class="table table-striped table-hover">
+                            <thead class="sticky-top">
+                                <tr class="tieude">
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Content</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Tools</th>
+                                </tr>
+                            </thead>
+                            <tbody id="conten_tb">
+                                {{#each chuaxuly}}
+                                <tr id="{{this._id}}">
+                                    <td>{{this.username}}</td>
+                                    <td>{{this.fullname}}</td>
+                                    <td>{{this.email}}</td>
+                                    <td>{{this.number_phone}}</td>
+                                    <td>{{this.ngayFeedback}}</td>
+                                    <td>{{this.Subject}}</td>
+                                    <td>
+                                        <span class="d-inline-block text-truncate"
+                                            style="display: block !important;max-width: 200px;">
+                                            {{this.content_feedback}}
+                                        </span>
+                                        <span data-bs-toggle="modal" data-bs-target="#exampleModal{{@index}}" class="bg_xemthem
+                                            badge bg-primary">See More</span>
+                                        <div class="modal fade" id="exampleModal{{@index}}" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Content feedback
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        {{this.content_feedback}}
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> {{#if this.status}}Đã Xử Lý {{else}} Chưa Xử Lý{{/if}}</td>
+                                    <td class="tools">
+                                        <i onclick="xoa('{{this._id}}')" class="fas fa-trash" style="color: red;"></i>
+                                        {{#if this.status}}
+                                        <i onclick="update_status('{{this._id}}',{{this.status}})"
+                                            style="color: rgb(22, 70, 228);" class="fas fa-check-square"></i>
+                                        {{else}}
+                                        <i onclick="update_status('{{this._id}}',{{this.status}})"
+                                            style="color: rgb(22, 70, 228);" class="far fa-square"></i>
+                                        {{/if}}
+                                    </td>
+                                </tr>
+                                {{/each}}
+                                {{#each daxuly}}
+                                <tr id="{{this._id}}">
+                                    <td>{{this.username}}</td>
+                                    <td>{{this.fullname}}</td>
+                                    <td>{{this.email}}</td>
+                                    <td>{{this.number_phone}}</td>
+                                    <td>{{this.ngayFeedback}}</td>
+                                    <td>{{this.Subject}}</td>
+                                    <td>
+                                        <span class="d-inline-block text-truncate"
+                                            style="display: block !important;max-width: 200px;">
+                                            {{this.content_feedback}}
+                                        </span>
+                                        <span data-bs-toggle="modal" data-bs-target="#exampleModal{{this._id}}" class="bg_xemthem
+                                            badge bg-primary">See More</span>
+                                        <div class="modal fade" id="exampleModal{{this._id}}" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Content feedback
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        {{this.content_feedback}}
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td> {{#if this.status}}Đã Xử Lý {{else}} Chưa Xử Lý{{/if}}</td>
+                                    <td class="tools">
+                                        <i onclick="xoa('{{this._id}}')" class="fas fa-trash" style="color: red;"></i>
+                                        {{#if this.status}}
+                                        <i onclick="update_status('{{this._id}}',{{this.status}})"
+                                            style="color: rgb(22, 70, 228);" class="fas fa-check-square"></i>
+                                        {{else}}
+                                        <i onclick="update_status('{{this._id}}',{{this.status}})"
+                                            style="color: rgb(22, 70, 228);" class="far fa-square"></i>
+                                        {{/if}}
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <div id="trang"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

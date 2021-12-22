@@ -1,27 +1,13 @@
-<style>
-    .register,
-    .image {
-        min-height: 70vh;
-    }
+    {{#section 'css'}}
+        <link rel="stylesheet" href="/css/register.css">
+    {{/section}}
 
-    .bg-image {
-        background-image: url('https://i.insider.com/5dfaa585855cc2024879828f?width=700');
-        background-size: cover;
-        background-position: center center;
-    }
-    .form_item{
-        margin-bottom:20px;
-    }
-    .register{
-        padding:20px 30px;
-       
-    }
-    .btn-register{
-        margin:10px;
-        position: absolute;
-        right: 82px;
-    }
-</style>
+    {{#section 'title'}}Register{{/section}}
+
+    {{#section 'javascript'}}
+         <script src="/ajax/register_ajax.js"></script>
+    {{/section}}
+
 <div class="container-fluid">
     <div class="row no-gutter">
         <div class="col-md-6 d-none d-md-flex bg-image"></div>
@@ -32,32 +18,45 @@
                 <div class="container">
                     <div class="row">
 
-                        <h4 style=" text-align:center"  class="display-6">Facebook finder</h4>
+                        <h4 style=" text-align:center" class="display-6">Facebook finder</h4>
+                        {{#if key}}
+                        <div id="tdtb">
+                           Registration Failed
+                        </div>
+                        {{/if}}
                         <br>
                         <form method="POST" action="/auth/register">
                             <div class="form_item">
                                 <label for="validationDefault01">User Name</label>
-                                <input type="text" class="form-control" name='username' id="txt_username"
+                                <input onfocus="an()" type="text" class="form-control" name='username' id="txt_username"
                                     placeholder="User Name" required>
+                                {{#if (kt_register 'Username' key) }}
+                                <label class="tb_register">{{message}}</label>
+                                {{/if}}
                             </div>
-                              <div class="form_item">
+                            <div class="form_item">
                                 <label for="validationDefault01">Password</label>
-                                <input type="Password" class="form-control" name='password' id="txt_password"
-                                    placeholder="Password" required>
+                                <input onfocus="an()" type="Password" class="form-control" name='password'
+                                    id="txt_password" placeholder="Password" required>
+                                {{#if (kt_register 'password' key) }}
+                                <label class="tb_register">{{message}}</label>
+                                {{/if}}
                             </div>
-                              <div class="form_item">
+                            <div class="form_item">
                                 <label for="validationDefault01">Full Name</label>
-                                <input type="text" class="form-control" name="fullname" id="txt_name"
+                                <input onfocus="an()" type="text" class="form-control" name="fullname" id="txt_name"
                                     placeholder="Full Name" required>
                             </div>
-                              <div class="form_item">
+                            <div class="form_item">
                                 <label for="validationDefault01">Email</label>
-                                <input type="email" class="form-control" Name="email" id="txt_email"
+                                <input onfocus="an()" type="email" class="form-control" Name="email" id="txt_email"
                                     placeholder="Email" required>
+                                {{#if (kt_register 'Email' key) }}
+                                <label class="tb_register">{{message}}</label>
+                                {{/if}}
                             </div>
                             <button type="submit" class="btn btn-success btn-register">Register</button>
                         </form>
-
                     </div>
                 </div>
             </div>

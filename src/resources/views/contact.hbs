@@ -1,0 +1,149 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/contact.css">
+{{/section}}
+
+{{#section 'title'}}Contact{{/section}}
+
+{{#section 'javascript'}}
+<script src="/ajax/contact_ajax.js"></script>
+{{/section}}
+<div>
+    <div class="container">
+        <h2 class="tieude_contract"><span>Contact</span> US</h2>
+        <div class="row">
+            <div class=" col-lg-4">
+                <div class="nen_xam contact_info row">
+                    <ul class=" contact_info_list">
+                        <h3 class="tiendecon">Contact Info</h3>
+                        <li class="contact_info_item">
+                            <i class="fas fa-map"></i>
+                            64 Thanh Nghị, Liên Chiểu, Đà Nẳng.
+                        </li>
+                        <li class="contact_info_item">
+                            <i class="fas fa-envelope"></i>
+                            facebookfinderhelp@gmail.com
+                        </li>
+                        <li class="contact_info_item">
+                            <i class="fas fa-phone-square-alt"></i>
+                            +84-912-306-253
+                        </li>
+                    </ul>
+                </div>
+                <div class="nen_xam oppen_time row">
+                    <ul class=" oppen_time_list">
+                        <h3 class="tiendecon">Opening Hours</h3>
+                        <li class="oppen_time_item">
+                            <div>
+                                <span class="daylv">
+                                    Monday
+                                </span>
+                                07:00am - 10:00pm
+                            </div>
+                        </li>
+                        <li class="oppen_time_item">
+                            <div>
+                                <span class="daylv">
+                                    Monday
+                                </span>
+                                07:00am - 10:00pm
+                            </div>
+                        </li>
+                        <li class="oppen_time_item">
+                            <div>
+                                <span class="daylv">
+                                    Tuesday
+                                </span>
+                                07:00am - 10:00pm
+                            </div>
+                        </li>
+                        <li class="oppen_time_item">
+                            <div>
+                                <span class="daylv">
+                                    Wednesday
+                                </span>
+                                07:00am - 10:00pm
+                            </div>
+                        </li>
+                        <li class="oppen_time_item">
+                            <div>
+                                <span class="daylv">
+                                    Friday
+                                </span>
+                                07:00am - 10:00pm
+                            </div>
+                        </li>
+                        <li class="oppen_time_item">
+                            <div>
+                                <span class="daylv">
+                                    Saturday
+                                </span>
+                                07:00am - 10:00pm
+                            </div>
+                        </li>
+                        <li class="oppen_time_item">
+                            <div>
+                                <span class="daylv">
+                                    Sunday
+                                </span>
+                                Closed
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class=" col-lg-8">
+                <div class="nen_xam form_gui">
+                    <div class="mb-3">
+                        <input id="username" readonly="true" value="{{data.username}}" style="display: none">
+                        <label for="exampleInputEmail1" class="form-label">Your Full Name</label>
+                        <input readonly="true" value="{{data.fullname}}" placeholder="Your Full Name" type="text"
+                            class="form-control" id="fullname" aria-describedby="emailHelp" required>
+                        <div class="valid-feedback">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Your Email </label>
+                            <input readonly="true" value="{{data.email}}" placeholder="Your Email" type="email"
+                                class="form-control" id="email" aria-describedby="emailHelp" required>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Your Number Phone </label>
+                            <input onfocus="an()" placeholder="Your Number Phone" type="text" class="form-control"
+                                id="phone" aria-describedby="emailHelp" required>
+                            <span id="tb_phone" class="tb_ct"></span>
+                            <div id="emailHelp" class="form-text">We'll never share your number phone with anyone else.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Your Subject </label>
+                            <input onfocus="an()" placeholder="Your Subject" type="text" class="form-control"
+                                id="tieude" aria-describedby="emailHelp" required>
+                            <span id="tb_tieude" class="tb_ct"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
+                            <textarea onfocus="an()" style="height:240px;resize: none;" placeholder="Your Message"
+                                class="form-control" id="noidung" rows="3" required></textarea>
+                            <span id="tb_noidung" class="tb_ct"></span>
+                        </div>
+                        <div class="btn_str">
+                            <a href="./home"> <button type="button" class="btn btn-danger">Cancel</button></a>
+                            <button onclick="gui()" type="submit" class="btn btn-primary">Send Now</button>
+                        </div>
+                        <div id="tong_tbaaa">
+                            <div id="qmk_true">
+                                <div id="tb_quenmk_true">
+                                    <i class="icon_qmk fas fa-check-square"></i>
+                                    <div id="txt_tbqmk_true">
+                                        Send feedback successfully
+                                    </div>
+                                </div>
+                                <a href="./home"><button style="margin-top: 12px;" type="button"
+                                        class="btn btn-primary">OK</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,51 @@
+.tools {
+    text-align: center;
+}
+
+.tools i {
+    color: red;
+    font-size: 24px;
+}
+
+.tools i:hover {
+    cursor: pointer;
+}
+
+.tieude :nth-child(4) {
+    text-align: center;
+}
+
+.tieude {
+    background-color: #3399ff
+}
+
+.tieude th {
+    color: #212529;
+}
+
+.table-hover>tbody>tr:hover>* {
+    --bs-table-accent-bg: rgb(51 153 255 / 25%) !important;
+    color: var(--bs-table-hover-color) !important;
+}
+
+/* phân trang */
+#trang ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#trang a {
+    text-decoration: none;
+}
+
+#trang li {
+    padding: 4px 14px;
+
+}
+
+#trang li.active {
+    background-color: #3399ff;
+    color: white;
+}

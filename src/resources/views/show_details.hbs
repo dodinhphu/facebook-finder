@@ -1,42 +1,122 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/show_detail.css">
+{{/section}}
+
+{{#section 'title'}}Details{{/section}}
+
+{{#section 'javascript'}}
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/material-photo-gallery.min.js"></script>
+<script type="text/javascript" src="/js/details/show_detail.js"></script>
+{{/section}}
 <div>
-
-    <div class='content'>
-        <div class='wapper'>
-          
-            <img class='img-detail' src='{{data.avt_imgs.[1]}}' />
-            
-            <div class='info'>
-                <ul>
-                    <li>{{data.name}}</li>
-                     <li>
-                        <i class="fas fa-user"></i> Link facebook:
-                        <span> {{data.link}} </span>
-                    </li>
-                    <li> <i class="fas fa-envelope-open-text"></i> Email :
-                        <span> abc@gmail.com</span>
-
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i> Điện thoại :
-                        <span> (024) 6680 5588 </span>
-                    </li>
-                    <li>
-                        <i class="fas fa-user"></i> Giới tính :
-                        <span> Nữ </span>
-                    </li>
-                    <li>
-                        <i class="fas fa-calendar-times"></i> Ngày sinh :
-                        <span> 01/01/1990</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-home"></i> Địa chỉ :
-                        <span> {{data.address.[0]}}</span>
-                    </li>
-                </ul>
-
+    <div class="app_details">
+        <div class="main container">
+            <div class="txt_details">
+                <h6>Deta<span>ils</span></h6>
+            </div>
+            <div id="profile-upper">
+                <div id="profile-banner-image">
+                    <!-- <img src="s.jpg" alt="Banner image"> -->
+                    <div class="anhbia" style="background-image: url('{{data.imgs.[0]}}');">
+                    </div>
+                </div>
+                <div id="profile-d">
+                    <div id="profile-pic">
+                        <!--  <img src="a3.jpg"> -->
+                        <div class="anh_daidien" style="background-image: url('{{data.avt_imgs.[0]}}');"></div>
+                    </div>
+                    <div id="u-name">{{data.name}}</div>
+                </div>
+                <div id="black-grd"></div>
+            </div>
+            <div id="main-content">
+                <div class="row tong__tong">
+                    <!-- trái -->
+                    <div class="col-lg-4" id="l-col">
+                        <div class="khoi__ thongtin__">
+                            <div class="tong_tieude_a">
+                                <i class="far fa-address-card"></i>
+                                <span class="tieude_aba">Information</span>
+                            </div>
+                            <div class="tong_ttct">
+                                <div class="ngaysinh_details">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <span>{{data.ngaysinh}}</span>
+                                </div>
+                                <div class="gioitinh__details">
+                                    <i class="far fa-user-circle"></i>
+                                    <span>{{data.gioitinh}}</span>
+                                </div>
+                                <div class="address_details">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>{{data.address}}</span>
+                                </div>
+                                <div class="address_details">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div>
+                                        {{#each data.more_information}}
+                                        <span style="display: block;">{{this}}.</span>
+                                        <hr>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                <div class="like_details">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>
+                                        {{data.page}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="khoi__ anh__">
+                            <div class="tong_tieude_a">
+                                <i class="far fa-images"></i>
+                                <span class="tieude_aba">Abum Avatar</span>
+                            </div>
+                            <div class="tong_anh__ container-fluid m-p-g">
+                                <div class="tong_anh_row row m-p-g__thumbs" data-google-image-layout
+                                    data-max-height="350">
+                                    <!-- anh 1 -->
+                                    {{#each data.avt_imgs}}
+                                    <div class="tong_anh_col col-lg-4 ">
+                                        <div data-full="{{this}}" class="bgrim__ m-p-g__thumbs-img"
+                                            style="background-image: url('{{this}}')">
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                <div class="m-p-g__fullscreen"></div>
+                            </div>
+                        </div>
+                        <div class="khoi__ avt__">
+                            <div class="tong_tieude_a">
+                                <i class="far fa-images"></i>
+                                <span class="tieude_aba">Abum Image</span>
+                            </div>
+                            <div class="tong_anh__ container-fluid m-p-g_1">
+                                <div class="tong_anh_row row m-p-g__thumbs" data-google-image-layout
+                                    data-max-height="350">
+                                    <!-- avt 1 -->
+                                    {{#each data.imgs}}
+                                    <div class="tong_anh_col col-lg-4">
+                                        <div data-full="{{this}}" class="bgrim__ m-p-g__thumbs-img"
+                                            style="background-image: url('{{this}}')"></div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                <div class="m-p-g__fullscreen"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- phải -->
+                    <div class="col-lg-8">
+                        <div class="post__">
+                            <!--  -->
+                            {{{chuyen_post data}}}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-
 </div>

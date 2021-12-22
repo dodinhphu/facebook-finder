@@ -2,10 +2,14 @@ const mongoose = require('mongoose');
 const bcryptjs = require('bcryptjs');
 const Schema = mongoose.Schema;
 const user = new Schema({
-    username: { type: String, unique: true, trim: true, required: [true, 'User Name Đã Tồn Tại'] },
-    email: { type: String, unique: true, trim: true, required: [true, 'Email Đã Tồn Tại'] },
-    password: { type: String, trim: true, required: [true, 'pasword must be required'], minLength: [6, 'Mật Khẩu Phải Trên 6 Kí tự'] },
+    username: { type: String, unique: true, trim: true, required: [true, 'User Name Already Exists'] },
+    email: { type: String, unique: true, trim: true, required: [true, 'Email Already Exists'] },
+    password: { type: String, trim: true, minLength: [6, 'Password Must Be Over 6 Characters'] },
     fullname: { type: String, unique: true, trim: true },
+    quyen: { type: Number, default: 1 },
+    notifications: { type: Array, default: [] },
+    history: { type: Array, default: [] },
+    ngaytao: { type: String, default: new Date().toDateString() }
 });
 user.pre('save', function (next) {
     let user = this;
@@ -17,4 +21,5 @@ user.pre('save', function (next) {
         }
     })
 })
-module.exports = mongoose.model('user', user); 
+
+module.exports = mongoose.model('user', user);

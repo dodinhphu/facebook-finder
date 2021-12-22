@@ -7,31 +7,109 @@
             <a href="/home">
                 <li>Home</li>
             </a>
-            <a href="/show">
-                <li>List Profile</li>
+            <a href="/history">
+                <li>History</li>
             </a>
             <li>Blog</li>
-            <li>Help Center</li>
+            <a href="/contact">
+                <li>Help Center</li>
+            </a>
 
         </ul>
+
         {{#if kt}}
         <div class="admin_true btn-group">
-            <button style="font-size:inherit" type="button" class="btn btn-secondary dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                WelCome, {{userdangnhap}}
+            <button type="button" class="btn_drdl btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="icon_user__ far fa-user"></i>
             </button>
-            <ul class="dropdown-menu">
+            <div class="ctb_" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div style="position:relative">
+                    <i class="far fa-bell"></i>
+                    <span style=" left: 29px;top: 4px;width: 24px;height: 24px;text-align: center;"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <span
+                            style="position: absolute;top: 4px;left: 8px;font-size: 14px;">{{notification_chuadoc.length}}</span>
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div style="margin-bottom: 6px;" class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div style="font-size: 18px;padding:0" class="modal-body">
+                            {{#if (kt_bang0 totalNotifications )}}
+                            <div class="tb_khong_tb">No Notification </div>
+                            <hr>
+                            {{else}}
+                            {{#each notification_chuadoc}}
+                            <a style="text-decoration: none;color:#0067ff"
+                                href="./notification?id={{this.id}}">
+                                <div class='tb_hd'>
+                                    <h6 class='titletb'>{{this.tieude}}</h6>
+                                    <div style="max-width: 450px;" class="d-inline-block text-truncate typetb">
+                                        {{{phan_loai this.loai}}} <span>{{this.noidung}}</span></div>
+                                    <div class="thoigiantb"><span>{{this.thoigian}}</span></div>
+                                </div>
+                            </a>
+                            <hr>
+                            {{/each}}
+                            {{#each notification_dadoc}}
+                            <a style="text-decoration: none;color:#262b2f"
+                                href="./notification?id={{this.id}}">
+                                <div class='tb_hd'>
+                                    <h6 class='titletb'>{{this.tieude}}</h6>
+                                    <div style="max-width: 450px;" class="d-inline-block text-truncate typetb">
+                                        {{{phan_loai this.loai}}} <span>{{this.noidung}}</span></div>
+                                    <div class="thoigiantb"><span>{{this.thoigian}}</span></div>
+                                </div>
+                            </a>
+
+                            <hr>
+                            {{/each}}
+                            {{/if}}
+                        </div>
+                        <div style="border:none" class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul style="z-index: 500000;" class="dropdown-menu">
+                <div class="ten_user_aa">
+                    <span>WelCome,</span>
+                    <span>{{userdangnhap}}</span>
+                </div>
                 <li>
                     <button onclick="logout()" style="font-size: 20px;" class="dropdown-item">
-                        Log Out <i class="fas fa-sign-out-alt"></i>
+                        <i class="fas fa-sign-out-alt"></i>
+                        Log Out
                     </button>
                 </li>
                 <li>
-                    <button style="font-size: 20px;" class="dropdown-item">
-                        My Account
-                        <i class="fas fa-user-circle"></i>
-                    </button>
+                    <a href='../auth/changepassword'>
+
+                        <button style="font-size: 20px;" class="dropdown-item">
+                            <i class="fas fa-user-circle"></i>
+                            My Account
+                        </button>
+                    </a>
                 </li>
+                {{#if (kt_so quyen 0) }}
+                <li>
+                    <a href="../admin">
+                        <button style="font-size: 20px;" class="dropdown-item">
+                            <i class="fas fa-user-shield"></i>
+                            Web Manager
+                        </button>
+                    </a>
+                </li>
+                {{/if}}
             </ul>
         </div>
         {{else}}
@@ -53,5 +131,3 @@
 
     </div>
 </div>
-
-<script src="/ajax/logout_ajax.js"></script>

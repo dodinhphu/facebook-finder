@@ -1,0 +1,69 @@
+.tools {
+    text-align: center;
+    display: flex;
+}
+
+.tools :nth-child(1) {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.tools a {
+    color: rgb(31, 131, 212);
+    margin-left: 5px;
+}
+.tools i:hover {
+    cursor: pointer;
+}
+
+.tieude :nth-child(5) {
+    text-align: center;
+}
+
+.tieude :nth-child(2) {
+    width: 150px;
+}
+
+.table-hover>tbody>tr:hover>* {
+    --bs-table-accent-bg: rgb(51 153 255 / 25%) !important;
+    color: var(--bs-table-hover-color) !important;
+}
+
+.total {
+    width: 110px;
+    text-align: center;
+}
+
+.so {
+    text-align: center;
+}
+
+.tieude {
+    background-color: #3399ff
+}
+
+.tieude th {
+    color: #212529;
+}
+
+/* phân trang */
+#trang ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#trang a {
+    text-decoration: none;
+}
+
+#trang li {
+    padding: 4px 14px;
+
+}
+
+#trang li.active {
+    background-color: #3399ff;
+    color: white;
+}

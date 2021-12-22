@@ -1,0 +1,62 @@
+.title, .selecter {
+    margin-bottom: 20px;
+}
+
+#btn_them {
+    margin: 0;
+}
+
+.noidung textarea {
+    height: 220px;
+    resize: none;
+}
+
+.tools {
+    text-align: center;
+}
+
+
+#tb_quenmk_true {
+    background-color: #5ea786;
+    display: flex;
+    border-radius: 6px;
+    border: 1px #5fd59f solid;
+    overflow: hidden;
+}
+
+.icon_qmk {
+    color: #fff;
+    padding: 10px;
+    align-self: center;
+}
+
+#txt_tbqmk_true, #txt_tbqmk_false {
+    background-color: #fff;
+    text-align: initial;
+    padding: 6px 0 6px 12px;
+    width: 100%;
+}
+.tbtbtbt{
+    text-align: center;
+    color: #5ea786;
+}
+.tb__ span{
+    font-weight: 600;
+    min-width: 68px;
+}
+.tb__{
+    display: flex;
+}
+.tb__ p{
+    margin: 0;
+}
+._tb{
+    color: red;
+    float: right;
+    margin-bottom: 10px;
+    display: none;
+}
+.chumau{
+    width: 86px;
+    text-align: center; 
+}

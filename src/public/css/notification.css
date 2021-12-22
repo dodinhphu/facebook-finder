@@ -1,0 +1,49 @@
+.tieude_n {
+    font-weight: 700;
+    text-align: center;
+    font-size: 37px;
+    color: #4aaebe;
+    margin: 18px 0;
+}
+
+.tong_n {
+    margin: 20px 0px 76px 0;
+    padding: 20px  30px;
+    background: #cdc8d0;
+    border-radius: 3px;
+}
+
+.tieude_n span {
+    color: #ff73ed;
+}
+
+.n__ {
+    padding: 0;
+    margin: 0;
+    margin: 20px 0;
+}
+
+.trai {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.phai {
+    font-size: 20px;
+    line-height: 2.5rem;
+}
+
+.btn_n {
+    display: flex;
+    justify-content: flex-end;
+}
+.txt_date{
+    font-style: italic;
+}
+.txt_tieude{
+    text-transform: uppercase;
+    font-weight: 500;
+}

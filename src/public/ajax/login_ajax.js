@@ -18,19 +18,19 @@ function login() {
         }
 
         if (data.data.prevlink) {
-            window.location = `http://localhost:5000${data.data.prevlink}`;
+            window.location = `..${data.data.prevlink}`;
         }
         else {
-            window.location = `http://localhost:5000/home`;
+            window.location = `../home`;
         }
     })
         .catch(err => {
-            console.log(err.responseJSON);
             let tb = document.getElementById('tb');
-            tb.style.display = "block";
             tb.innerText = err.responseJSON.message;
+            $('#tb').show(200);
+
             setTimeout(function () {
-                tb.style.display = "none";
+                $('#tb').hide(1000);
             }, 3000)
         })
 }
@@ -56,4 +56,44 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+function quen_mk() {
+    $('#noidungmodule').css('background-color', '#ccc');
+    $('#noidungmodule').append('<div id="loader" class="loader"></div>')
+    $('#username_quen').attr('readonly', true);
+    $('#username_quen').css('cursor',"not-allowed");
+    $.ajax({
+        url: './forgotpassword',
+        method: 'POST',
+        data: {
+            username: $('#username_quen').val().trim(),
+        }
+    }).then(function (response) {
+        $('#loader').remove();
+        $('#username_quen').attr('readonly', false);
+        $('#username_quen').css('cursor',"text");
+        $('#noidungmodule').css('background-color', '#fff');
+        $('#txt_tbqmk_true').text(`Please check your emails ${response.accepted[0]}`);
+        $('#username_quen').val('');
+        $('#username_quen').hide();
+        $('#btn_qmk_ctn').hide();
+        $('#qmk_true').show(200);
+    })
+        .catch(function (error) {
+            $('#loader').remove();
+            $('#username_quen').attr('readonly', false);
+            $('#username_quen').css('cursor',"text");
+            $('#noidungmodule').css('background-color', '#fff');
+            $('#txt_tbqmk_false').text(JSON.parse(error.responseText).message);
+            $('#qmk_false').show(200);
+        })
+}
+function an_qmk() {
+    $('#username_quen').val('');
+    $('#qmk_false').hide(200);
+    $('#qmk_true').hide(200);
+}
+function hien_qmk() {
+    $('#username_quen').show();
+    $('#btn_qmk_ctn').show();
 }

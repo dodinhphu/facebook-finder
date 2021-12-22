@@ -1,42 +1,82 @@
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column
-    }
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/home.css">
+{{/section}}
 
-    canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-</style>
-<script defer src="/js/face-api.min.js"></script>
-<script defer src="/js/script.js"></script>
-<input type="file" id="imageUpload">
-<br>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Search
-</button>
-<!-- The Modal -->
-<div class="modal" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Danh Sách Khuôn Mặt</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- Modal body -->
-            <div class="select-faces">
-                <ul id="ulist">
-                </ul>
-            </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+{{#section 'title'}}Facebook Finder{{/section}}
+
+{{#section 'javascript'}}
+<script defer src="/js/home_js/face-api.min.js"></script>
+<script defer src="/js/home_js/script.js"></script>
+<script defer src="/js/home_js/home.js"></script>
+{{/section}}
+
+<div>
+
+    <div class="content">
+        <div class="container">
+            <h1>Face Search Engine</h1>
+            <p>FACIAL RECOGNITION SEARCH TOOL. UPLOAD YOUR PHOTO AND FIND WHERE IMAGES WITH YOUR FACE APPEAR
+                ONLINE.
+            </p>
+        </div>
+        <div class="upload">
+            <div class='container-1'>
+                <h2 class='heading'>Add your Images </h2>
+                <div class='img-holder'>
+                    <img src='/images/blank-profile-picture-973460_640.png' alt='' id='img' class='img' />
+                </div>
+
+                <div class='label'>
+                    <label class='image-upload'>
+                        <div style='display: flex;justify-content: center;align-content: center;margin-top: 5px;'>
+                            <i class='material-icons' style='margin-right: 5px '> add_photo_alternate</i>
+                            <p>Choose your photo</p>
+                        </div>
+                        <input type='file' name='image-upload' id='imageUpload' />
+                    </label>
+                </div>
+
+
+                <div id="search" class='search'>
+                    <div id='tong_load'>
+                        <div class='loader'>
+                            <div class='loader--dot'></div>
+                            <div class='loader--dot'></div>
+                            <div class='loader--dot'></div>
+                            <div class='loader--dot'></div>
+                            <div class='loader--dot'></div>
+                            <div class='loader--dot'></div>
+                            <div class='loader--text'></div>
+                        </div>
+                    </div>
+
+                    <button type="button" id="btn_search" class=" btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#myModal">
+                        <i class="fas fa-search" style='font-size: 20px; margin-right: 8px'></i>
+                        Search
+                    </button>
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Danh Sách Khuôn Mặt</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="select-faces">
+                                    <ul id="ulist">
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>

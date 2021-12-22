@@ -1,14 +1,24 @@
 @charset "UTF-8";
+
 * {
   list-style: none;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app {
+  background-color: #f7f7f7;
 }
 
 .canvas {
@@ -177,7 +187,6 @@ button.close {
 /*body  */
 
 .content {
-  /* background-color: gainsboro; */
   padding-bottom: 3rem;
   background-color: #f7f7f7;
 }
@@ -269,7 +278,7 @@ button.close {
   justify-content: center;
 }
 
-.search span {
+/* .search span {
   background-color: #3399ff;
   color: #ffff;
   border-radius: 10px;
@@ -278,7 +287,7 @@ button.close {
   width: 100px;
   height: 40px;
   padding-top: 6px;
-}
+} */
 
 /* icon */
 
@@ -366,20 +375,24 @@ button.close {
   .footer {
     max-width: 690px;
   }
+
   .logo1 {
     display: block;
     margin: 0 auto;
     margin-bottom: 13px;
   }
+
   .footer-right {
     text-align: center;
     display: contents;
   }
+
   .footer-2 {
     max-width: 690px;
     display: grid;
     text-align: center;
   }
+
   .footer-2 span {
     /* text-align: center;
         display: block; */
@@ -397,31 +410,6 @@ button.close {
   list-style: none;
 }
 
-.home-header {
-  display: inline-block;
-  width: 100%;
-  height: 70px;
-  background: #3399ff;
-}
-
-.logo {
-  width: 136px;
-  margin-top: -6px;
-}
-
-.menu {
-  display: block;
-  text-align: center;
-  margin-top: -40px;
-}
-
-.menu li {
-  display: inline-block;
-  vertical-align: super;
-  margin-right: 25px;
-  color: #fff;
-  font-size: 20px;
-}
 
 .menu li:hover {
   border-bottom: 2px solid #fff;
@@ -547,8 +535,13 @@ button.close {
   object-fit: cover;
 }
 
-#input[type="file"] {
-  display: none;
+#imageUpload[type="file"] {
+  opacity: 0;
+  position: absolute;
+  right: 5px;
+  font-size: 10px;
+  height: 44px;
+  bottom: 3px;
 }
 
 .label {
@@ -577,7 +570,7 @@ button.close {
   justify-content: center;
 }
 
-.search span {
+/* .search span {
   background-color: #3399ff;
   color: #ffff;
   border-radius: 10px;
@@ -586,7 +579,7 @@ button.close {
   width: 100px;
   height: 40px;
   padding-top: 6px;
-}
+} */
 
 /* icon */
 
@@ -674,20 +667,24 @@ button.close {
   .footer {
     max-width: 690px;
   }
+
   .logo1 {
     display: block;
     margin: 0 auto;
     margin-bottom: 13px;
   }
+
   .footer-right {
     text-align: center;
     display: contents;
   }
+
   .footer-2 {
     max-width: 690px;
     display: grid;
     text-align: center;
   }
+
   .footer-2 span {
     /* text-align: center;
         display: block; */
@@ -814,13 +811,13 @@ button.close {
 }
 
 /* DASHBOARD */
-
 .menu-left {
   color: gray;
   font-size: 15px;
   margin-left: 32px;
   text-transform: uppercase;
   font-family: "Material Icons";
+
   text-decoration: none !important;
 }
 
@@ -835,15 +832,6 @@ button.close {
   font-family: "Font Awesome 5 Free";
 }
 
-.metismenu li h2:after {
-  content: "";
-  width: 13%;
-  position: absolute;
-  left: 28px;
-  bottom: 580px;
-  border-bottom: 2px solid rgba(102, 97, 91, 0.3);
-}
-
 .left-side-menu {
   border: 2px solid #f7f7f0;
   /* margin-bottom: 35px; */
@@ -854,6 +842,10 @@ button.close {
 }
 
 /* ADMIN */
+
+.content-page {
+  width: 93%;
+}
 
 .col-12 {
   background-color: white;
@@ -877,11 +869,93 @@ button.close {
 .card-box {
   background-color: #fff;
   padding: 1.25rem;
-  display: flex;
-  margin-bottom: 24px;
   border-radius: 0.25rem;
+  height: 100%;
 }
 
-.body {
-  min-height: 520px;
+
+.btn_drdl {
+  background: #39f;
+  font-size: inherit;
+  border-color: #39f;
+  color: #fff;
+  font-size: 24px;
+}
+
+.btn_drdl:hover {
+  color: #fff;
+}
+
+.ten_user_aa {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.ten_user_aa span {
+  display: block;
+}
+
+.ctb_ {
+  background: #39f;
+  font-size: inherit;
+  border-color: #39f;
+  color: #fff;
+  font-size: 24px;
+  margin-left: 4px;
+}
+
+.ctb_:hover {
+  cursor: pointer;
+}
+
+.icon_user__ {
+  margin-right: -10px;
+}
+
+.titletb {
+  margin: 0;
+  text-align: center;
+}
+
+.typetb {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.typetb span {
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.contenttb {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.contenttb span {
+  font-weight: 400;
+}
+
+.thoigiantb {
+  text-align: end;
+  font-size: 14px;
+}
+
+.thoigiantb span {
+  font-weight: 400;
+  font-style: italic;
+  margin-left: 6px;
+}
+
+hr {
+  margin: 6px 0;
+}
+
+.tb_khong_tb {
+  margin: 20px 0;
+  text-align: center;
+  font-style: italic;
 }

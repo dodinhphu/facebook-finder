@@ -1,0 +1,101 @@
+.nen_xam {
+    background-color: #f1f1f1;
+}
+
+.tieude_contract {
+    text-align: center;
+    margin: 14px 0 0 0;
+    font-weight: 800;
+}
+
+.tieude_contract span {
+    color: #0d6efd;
+}
+
+.contact_info_list, .oppen_time_list {
+    text-decoration: none;
+    list-style: none;
+    padding: 8px;
+}
+
+.tiendecon {
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.form_gui {
+    padding: 12px;
+}
+
+.contact_info {
+    margin-bottom: 18px;
+}
+
+.contact_info_item, .oppen_time_item {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.contact_info_item i {
+    color: #0d6efd;
+    margin-right: 8px;
+}
+
+.oppen_time_item span {
+    color: #0d6efd;
+    display: inline-block;
+    min-width: 94px;
+}
+
+.btn_str {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.btn_str button {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.tb_ct {
+    width: 100%;
+    text-align: end;
+    color: red;
+    display: none;
+    float: right;
+}
+
+
+
+#tb_quenmk_true {
+    background-color: #5ea786;
+    display: flex;
+    border-radius: 6px;
+    border: 1px #5fd59f solid;
+    overflow: hidden;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.icon_qmk {
+    color: #fff;
+    padding: 10px;
+    align-self: center;
+}
+
+#txt_tbqmk_true {
+    background-color: #fff;
+    text-align: initial;
+    padding: 6px 0 6px 12px;
+    width: 100%;
+    padding-top: 16px;
+}
+
+#qmk_true {
+    display: flex;
+    justify-content: space-between;
+}
+#tong_tbaaa {
+    display: none;
+}

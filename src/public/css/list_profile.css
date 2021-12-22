@@ -1,0 +1,101 @@
+#tong__tong{
+    justify-content:center;
+}
+.tong_card__ {
+    margin-bottom: 14px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+
+.card____ {
+    padding: 0;
+    margin: 0;
+}
+
+.anh__ {
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 306px;
+    transition: 0.4s;
+   
+}
+
+.anh__:hover {
+    transform: scale(1.2);
+}
+
+.conten__ {
+    margin: 0;
+    padding: 0;
+    margin-left: 12px;
+}
+
+.ten__ {
+    text-align: center;
+    margin: 12px;
+}
+
+.item__ {
+    margin: 12px 4px;
+}
+
+.txt_text {
+    line-height: 1.8rem;
+    height: 3.6rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.chi_tiet__ button {
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    margin: 0;
+}
+
+.indam {
+    font-weight: 600;
+}
+
+.history___ {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #6c6c6c;
+    margin: 10px 0 20px 0;
+}
+
+.history___ span {
+    color: #0089ff;
+}
+
+/* phân trang */
+#trang ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#trang a {
+    text-decoration: none;
+}
+
+#trang li {
+    padding: 4px 14px;
+
+}
+
+#trang li.active {
+    background-color: #3399ff;
+    color: white;
+}
+
+#trang {
+    margin-top: -10px;
+    margin-bottom: 22px;
+}

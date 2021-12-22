@@ -1,20 +1,13 @@
-<style>
-    .login,
-    .image {
-        min-height: 70vh;
-    }
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/login.css">
+{{/section}}
 
-    .bg-image {
-        background-image: url('https://i.insider.com/5dfaa585855cc2024879828f?width=700');
-        background-size: cover;
-        background-position: center center;
-    }
-    #tb{
-        padding: 6px;
-        display: none;
-        border-radius: 4px;
-    }
-</style>
+{{#section 'title'}}Login{{/section}}
+
+{{#section 'javascript'}}
+<script src="/ajax/login_ajax.js"></script>
+{{/section}}
+
 <div class="container-fluid">
     <div class="row no-gutter">
         <!-- The image half -->
@@ -33,7 +26,7 @@
                             <br>
                             <div>
                                 <div id="tb" class="alert alert-danger " role="alert">
-                                   
+
                                 </div>
                                 <div class="form-group mb-3">
                                     <input id="username" type="text" placeholder="User Name" required="" autofocus=""
@@ -47,12 +40,67 @@
                                     <input id="customCheck1" type="checkbox" class="custom-control-input">
                                     <label for="customCheck1" class="custom-control-label">Remember password</label>
                                 </div>
-                                <button onclick="login()" type="submit"
-                                    class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign
-                                    in</button>
-                                <div class="text-center d-flex justify-content-between mt-4">
-                                    <p>New User <a href="/auth/register" class="font-italic text-muted">
-                                            <u>Register Here</u></a></p>
+                                <div class="kd">
+                                    <div class="form-group btn_lg">
+                                        <button onclick="login()" type="submit"
+                                            class="btn_lglg btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign
+                                            in</button>
+                                    </div>
+                                    <div class="tong_lk">
+                                        <div class="text-center d-flex justify-content-between">
+                                            <p>Forgot Password
+                                                <span onclick="hien_qmk()" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"
+                                                    class="sp_quenmk badge bg-secondary">Click Here</span>
+                                            <div class="modal fade" id="exampleModal" data-bs-backdrop="static"
+                                                data-bs-keyboard="false" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div id="noidungmodule" class="modal-content">
+
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Forgot
+                                                                Password
+                                                            </h5>
+                                                            <button onclick="an_qmk()" type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div id="qmk_false">
+                                                            <div id="tb_quenmk_false">
+                                                                <i class="icon_qmk fas fa-exclamation-triangle"></i>
+                                                                <div id="txt_tbqmk_false"> check</div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="qmk_true">
+                                                            <div id="tb_quenmk_true">
+                                                                <i class="icon_qmk fas fa-check-square"></i>
+                                                                <div id="txt_tbqmk_true"> check</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <input onfocus="an_qmk()"
+                                                                style="height:46px;background: #dcdcdc;color: #0c69f2;"
+                                                                id="username_quen" type="text" placeholder="User Name"
+                                                                required="" autofocus=""
+                                                                class="form-control rounded-pill border-0  px-4">
+                                                        </div>
+                                                        <div class="btn_quenmk modal-footer">
+                                                            <button onclick="an_qmk()" type="button"
+                                                                class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button id="btn_qmk_ctn" onclick="quen_mk()" type="button"
+                                                                class="btn_qmk btn btn-primary">Continue</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </p>
+                                        </div>
+                                        <div class="text-center d-flex justify-content-between">
+                                            <p>New User<a href="/auth/register" class="font-italic text-muted">
+                                                    <span class="badge bg-secondary">Register Here</span></a></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -64,4 +112,3 @@
 
     </div>
 </div>
-<script src="/ajax/login_ajax.js"></script>

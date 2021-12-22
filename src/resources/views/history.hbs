@@ -1,0 +1,62 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/history.css">
+{{/section}}
+
+{{#section 'title'}}History{{/section}}
+
+{{#section 'javascript'}}
+<script src="/js/admin_js/pagination.min.js"></script>
+<script src="/js/history_js/history.js"></script>
+{{/section}}
+
+
+<div class="container">
+    <h5 class="history___">Search <span>History</span></h5>
+    <div id="tong__tong" class="row">
+        {{#if (kt_bang0 data.length) }}
+        <div>History Empty</div>
+        {{else}}
+        {{#each data}}
+        <div class="col-lg-6">
+            <div class="tong_card__ card shadow ">
+                <div class="card____ row g-0">
+                    <div style="overflow: hidden;" class="col-md-6">
+                        <div class="anh__" style="background-image: url({{this.avt_imgs.[0]}})"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="conten__ card-body">
+                            <h5 class="ten__ card-title">{{this.name}}</h5>
+                            <div class="item__ ngaysinh__">
+                                <span class="indam">Ngày Sinh: </span>
+                                <span>{{this.ngaysinh}}</span>
+                            </div>
+                            <div class="item__ gioitinh__">
+                                <span class="indam">Giới Tính: </span>
+                                <span>{{this.gioitinh}}</span>
+                            </div>
+                            <div class="item__ diachi__">
+                                <span class="indam">Địa Chỉ: </span>
+                                <span>{{this.address}}</span>
+                            </div>
+                            <div class="item__ like__">
+                                <div class="txt_text"><span class="indam">Thích:</span>
+                                    {{#each this.page}}{{this}}, {{/each}}
+                                </div>
+                            </div>
+                            <div class="chi_tiet__">
+                                <a href="./show/details/{{this.profile_id}}">
+                                    <button class="btn btn-primary">
+                                        Details
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+    <div id="trang"></div>
+</div>

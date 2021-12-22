@@ -1,0 +1,12 @@
+.bg_xemthem:hover{
+    cursor: pointer;
+}
+.bg_xemthem{
+    padding: 3px !important;
+}
+.tieude {
+    background-color: #3399ff;
+}
+.tools i:hover{
+    cursor: pointer;
+}

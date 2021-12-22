@@ -1,0 +1,73 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/admin_css/all_profile.css">
+{{/section}}
+
+{{#section 'title'}}Admin - All Profile{{/section}}
+
+{{#section 'javascript'}}
+<script src="/js/admin_js/pagination.min.js"></script>
+<script src="/js/admin_js/all_profile.js"></script>
+{{/section}}
+
+
+<div>
+    <div id="wrapper" style='display: flex;'>
+        {{>admin_nav}}
+        <div class="content-page" style="width:83%">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                                        <li class="breadcrumb-item active">All Profile</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">All Profile</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table class="table table-striped table-hover">
+                            <thead class="sticky-top">
+                                <tr class="tieude">
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th class="so" scope="col">Sex</th>
+                                    <th scope="col">Date of birth</th>
+                                    <th class="total" scope="col">Total Imgs</th>
+                                    <th class="total" scope="col">Total Avatar</th>
+                                    <th scope="col">Tools</th>
+                                </tr>
+                            </thead>
+                            <tbody id="conten_tb">
+                                {{#each data}}
+                                <tr id='{{this._id}}'>
+                                    <td>{{this.profile_id}}</td>
+                                    <td>{{this.name}}</td>
+                                    <td>{{this.address}}</td>
+                                    <td class="so">{{this.gioitinh}}</td>
+                                    <td class="so">{{this.ngaysinh}}</td>
+                                    <td class="so">{{this.imgs.length}}</td>
+                                    <td class="so">{{this.avt_imgs.length}}</td>
+                                    <td>
+                                        <div class="tools">
+                                            <i onclick="xoa('{{this.profile_id}}','{{this._id}}')" class="fas fa-trash"
+                                                style="color: red;"></i>
+                                            <a href="../show/details/{{this.profile_id}}"><i class="fas fa-user-circle"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <div id="trang"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

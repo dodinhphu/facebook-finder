@@ -14,7 +14,7 @@ class adminController {
         }
         page = parseInt(page);
         let skip = (page - 1) * PAGE_ITEAM;
-        user.find({quyen:1}).skip(skip).limit(PAGE_ITEAM)
+        user.find({ quyen: 1 }).skip(skip).limit(PAGE_ITEAM)
             .then(function (data) {
                 user.countDocuments({})
                     .then(function (count) {
@@ -82,8 +82,8 @@ class adminController {
         let pt_crawling_day = (profile_crawling_day * 100) / tong_profile_true;
         let pt_not_handled_day = (profile_not_crawling_day * 100) / tong_profile_false;
         let pt_userday = (user_day * 100) / (total_user - user_day);
-        let d= new Date();
-        console.log("ngày",d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+","+"   "+(d.getHours+1)+"/"+(d.getMinutes+1))
+        let d = new Date();
+        console.log("ngày", d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + "," + "   " + (d.getHours() + 1) + "/" + (d.getMinutes() + 1))
         res.render('admin-view/admin_home', {
             total_profile_tranning_day: profile_tranning_day,
             total_profile_crawling_day: profile_crawling_day,
@@ -138,7 +138,7 @@ class adminController {
             })
     }
     get_all_user(req, res, next) {
-        user.find({quyen:1}).limit(5)
+        user.find({ quyen: 1 }).limit(5)
             .then(function (data) {
                 let a = [];
                 data.forEach(user => {

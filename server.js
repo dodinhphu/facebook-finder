@@ -97,11 +97,11 @@ const cors = require('cors');
 app.use(cors());
 /*  */
 app.use(express.json());
-const port = process.env.APP_PORT || 5000;
 
 // export router
 const router = require('./routes/index');
+const PORT = process.env.PORT || 5000; 
 router(app);
-app.listen(port, () => {
-    console.log('server listen port ', port);
+app.listen(PORT, () => {
+    console.log('server listen port ', PORT);
 });

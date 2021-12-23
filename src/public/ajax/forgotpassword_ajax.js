@@ -23,7 +23,7 @@ function change_password() {
         })
             .then(function (data) {
                 $('#toankhung').hide(200);
-                $('#tong_tren').append('<div class= "alert alert-success" role = "alert">Thay Đỗi Thành Công</div>')
+                $('#tong_tren').append('<div class= "alert alert-success" role = "alert">Change Password successfully</div>')
                 console.log(data);
             })
             .catch(function (err) {

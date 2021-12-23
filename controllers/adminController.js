@@ -63,10 +63,8 @@ class adminController {
             check: false,
         });
         let profile_tranning_day = await data_tranning.countDocuments({
-            check: true,
             ngaytao: new Date(ngaychuyendoi).toDateString(),
         });
-        console.log(profile_tranning_day)
         let profile_crawling_day = await profile.countDocuments({
             check: true,
             ngaytao: new Date(ngaychuyendoi).toDateString(),

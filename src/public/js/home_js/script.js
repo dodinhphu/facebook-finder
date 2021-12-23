@@ -18,6 +18,7 @@ function start() {
     $('#btn_search').hide();
     /*   $('#search').append(loader_nho); */
     $('#tong_load').show();
+
     await hienthianh(imageUpload);
     /* xóa face cũ */
     removeFace();
@@ -147,14 +148,19 @@ async function nhan_dien(img) {
     let faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6);
     let results = await faceMatcher.findBestMatch(resizedDetections.descriptor)
     let list_profile = [];
-    while (results.distance <= 0.6) {
-      console.log(results.label, results.distance)
+    if ($('#kt_list').prop('checked') === true) {
+      while (results.distance <= 0.6) {
+        console.log(results.label, results.distance)
+        list_profile.push(results.label)
+        labeledFaceDescriptors = labeledFaceDescriptors.filter(function (data) {
+          return data.label != results.label
+        })
+        faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6);
+        results = await faceMatcher.findBestMatch(resizedDetections.descriptor)
+      }
+    }
+    else {
       list_profile.push(results.label)
-      labeledFaceDescriptors = labeledFaceDescriptors.filter(function (data) {
-        return data.label != results.label
-      })
-      faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6);
-      results = await faceMatcher.findBestMatch(resizedDetections.descriptor)
     }
     let myform = document.createElement('form');
     myform.id = 'myform';

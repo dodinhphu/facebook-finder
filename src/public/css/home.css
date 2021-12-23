@@ -342,7 +342,17 @@
         content: "Loading...";
     }
 }
-#tong_load{
+
+#tong_load {
     display: none;
 }
 
+.phan_day {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cb_list {
+    font-size: medium;
+    color: #131313;
+}

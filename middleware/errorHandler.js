@@ -5,13 +5,13 @@ errorHandler = function (err, req, res, next) {
         err.status = 400;
         for (let p in err.keyValue) {
             p = p.charAt(0).toUpperCase() + p.slice(1)
-            err.message = `${p} Đã Tồn Tại`;
+            err.message = `${p} Already Exists`;
             err.key = p;
         }
     }
     if (err.kind === "ObjectId") {
         err.status = 404;
-        err.message = `Profile ${req.originalUrl} Không Tồn Tại`;
+        err.message = `Profile ${req.originalUrl} Not Found`;
     }
 
 
